@@ -50,10 +50,10 @@ const Header: React.FC = () => {
           </div>
 
           {/* Hamburger Menu Icon (Visible on small screens) */}
-          <div className="md:hidden flex items-center pl-6">
+          <div className="md:hidden flex items-center px-4">
             <button
               onClick={toggleMenu}
-              className="text-[#2c5899] text-2xl focus:outline-none ml-4"
+              className="text-[#2c5899] text-2xl focus:outline-none ml-3"
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
