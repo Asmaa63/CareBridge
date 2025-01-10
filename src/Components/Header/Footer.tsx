@@ -163,8 +163,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="text-center text-sm text-gray-500 mt-10">
-        Copyright © 2017. PSDfreebies.com | Best PSD Template for freelancer
-        and agencies
+        Copyright © 2025 CareBridge Rehab. All Rights Reserved
       </div>
     </motion.footer>
   );

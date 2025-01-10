@@ -1,5 +1,5 @@
 import React from "react";
-import bgimage from "../../assets/BlueBg.png";
+import bgimage from "../../assets/BlueBg.webp";
 import { motion } from "framer-motion";
 
 const StatsSection: React.FC = () => {

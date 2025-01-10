@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className=" w-full z-50 bg-white shadow-sm py-4">
+    <header className=" w-full z-50 bg-white shadow-sm pt-4">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center px-4">
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* Hamburger Menu Icon (Visible on small screens) */}
-          <div className="md:hidden flex items-center px-4">
+          <div className="md:hidden flex items-center pl-6">
             <button
               onClick={toggleMenu}
               className="text-[#2c5899] text-2xl focus:outline-none ml-4"

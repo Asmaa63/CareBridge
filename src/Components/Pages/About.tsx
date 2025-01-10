@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaUser, FaBriefcase } from 'react-icons/fa';
-import aboutImage from '../../assets/About.png'; // استبدل المسار
+import aboutImage from '../../assets/About.webp'; // استبدل المسار
 import { motion } from 'framer-motion';
 
 interface FeatureProps {
