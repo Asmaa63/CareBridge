@@ -17,7 +17,7 @@ const Header: React.FC = () => {
           <div className="bg-[#2c5899] text-white font-bold text-4xl px-2 py-1 rounded">
             CBR
           </div>
-          <div className="ml-2">
+          <div className="">
             <h1 className="text-3xl font-bold text-[#2c5899]">CareBridge</h1>
             <p className="text-lg text-gray-500">Rehab</p>
           </div>
