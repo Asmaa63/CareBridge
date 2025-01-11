@@ -8,7 +8,7 @@ const Home: React.FC = () => {
       <img
         src={HomeImage}
         alt="Home"
-        className="h-full w-full lg:object-fill md:object-cover sm:object-cover xs:object-cover " // تغير إلى object-cover في الشاشات الأصغر
+        className="h-full w-full object-cover " // تغير إلى object-cover في الشاشات الأصغر
       />
       <div className="absolute text-black px-4 md:items-start md:left-20">
         <div className="text-center md:text-left max-w-2xl mx-auto md:mx-0">
