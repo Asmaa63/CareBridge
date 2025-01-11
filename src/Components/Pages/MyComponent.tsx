@@ -27,17 +27,18 @@ const StatsSection: React.FC = () => {
   };
 
   const iconAnimation = {
-    animate: {
-      scale: [1, 1.2, 1],
-      rotate: [0, 10, -10, 0],
-    },
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: "mirror",
-      ease: "easeInOut",
-    },
-  };
+  animate: {
+    scale: [1, 1.2, 1],
+    rotate: [0, 10, -10, 0],
+  },
+  transition: {
+    duration: 2,
+    repeat: Infinity,
+    repeatType: "mirror" as const, // تعريف القيمة بشكل صريح
+    ease: "easeInOut",
+  },
+};
+
 
   return (
     <motion.div
