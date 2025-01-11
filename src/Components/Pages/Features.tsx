@@ -1,6 +1,7 @@
 import React from "react";
-import { FaStethoscope, FaPhoneAlt, FaUserMd, FaUserCheck } from "react-icons/fa";
 import { motion } from "framer-motion";
+// استيراد أيقونات جديدة
+import { FaBriefcaseMedical, FaMoneyCheckAlt, FaGlobe, FaHandshake } from "react-icons/fa";
 
 interface CardProps {
   title: string;
@@ -34,27 +35,27 @@ const Features: React.FC = () => {
       transition={{ duration: 0.8, ease: "easeOut" }} // مدة الأنيميشن وسهولة الحركات
     >
       <Card
-        title="Best Treatment"
-        description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-        icon={<FaStethoscope size={30} />}
+        title="Expertise"
+        description="Founded by healthcare professionals, we understand the unique needs of your agency."
+        icon={<FaBriefcaseMedical size={30} />} // أيقونة تمثل الخبرة
         bgColor="bg-[#48b3d3]"
       />
       <Card
-        title="Emergency Help"
-        description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-        icon={<FaPhoneAlt size={30} />}
+        title="Pricing"
+        description="Our charges ensure you receive the best service at competitive industry rates."
+        icon={<FaMoneyCheckAlt size={30} />} // أيقونة تمثل الأسعار
         bgColor="bg-[#63c4d1]"
       />
       <Card
-        title="Medical Staff"
-        description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-        icon={<FaUserMd size={30} />}
+        title="Coverage"
+        description="Proudly provide professional therapy home health across multiple locations. Whether you're in a major city or a smaller community, our wide-reaching network ensures that we can meet your hiring needs."
+        icon={<FaGlobe size={30} />} // أيقونة تمثل التغطية
         bgColor="bg-[#41bdbd]"
       />
       <Card
-        title="Qualified Doctors"
-        description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-        icon={<FaUserCheck size={30} />}
+        title="Reliability"
+        description="We ensure consistent, high-quality services that you can depend on for all your staffing and care needs."
+        icon={<FaHandshake size={30} />} // أيقونة تمثل الاعتمادية
         bgColor="bg-[#37c3a8]"
       />
     </motion.div>

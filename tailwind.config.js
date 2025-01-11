@@ -13,7 +13,8 @@ module.exports = {
         fadeIn: "fadeIn 1.5s ease-in-out",
         fadeInDelay: "fadeIn 2s ease-in-out",
         slideUp: "slideUp 1.5s ease-out",
-        scaleUp: "scaleUp 1.5s ease-in"
+        scaleUp: "scaleUp 1.5s ease-in",
+        "spin-slow": "spin 4s linear infinite"
       },
       keyframes: {
         fadeIn: {
