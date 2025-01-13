@@ -1,14 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaFacebookF,
-  FaGoogle,
-  FaVk,
-  FaLinkedinIn,
-  FaYoutube,
   FaEnvelope,
   FaMobileAlt,
-  FaMapMarkedAlt,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

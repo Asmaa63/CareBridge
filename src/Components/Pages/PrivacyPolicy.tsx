@@ -4,7 +4,6 @@ import {
   FaInfoCircle,
   FaLock,
   FaCookieBite,
-  FaRegEdit,
   FaLink,
   FaEnvelope,
   FaPhoneAlt,
