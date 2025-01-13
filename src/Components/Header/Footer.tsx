@@ -10,6 +10,7 @@ import {
   FaMobileAlt,
   FaMapMarkedAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   const containerVariants = {
@@ -35,28 +36,35 @@ const Footer: React.FC = () => {
       viewport={{ once: true, amount: 0.3 }} // تظهر عند رؤية 30% من الفوتر
       variants={containerVariants}
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-6">
         {/* Get in Touch */}
         <motion.div variants={itemVariants}>
           <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
           <ul className="space-y-4 text-base">
-            <li className="flex items-center">
-              <FaEnvelope className="text-gray-400 mr-3 text-3xl hover:text-[#0087be] transition cursor-pointer" />
-              <span className="text-md text-gray-400">free@psdfreebies.com</span>
-            </li>
-            <li className="flex items-center">
-              <FaMobileAlt className="text-gray-400 mr-3 text-4xl hover:text-[#0087be] transition cursor-pointer" />
-              <span className="text-md text-gray-400">+123 456 7890, +123 456 7880</span>
-            </li>
-            <li className="flex items-center">
-              <FaMapMarkedAlt className="text-gray-400 mr-3 text-5xl hover:text-[#0087be] transition cursor-pointer" />
-              <span className="text-md text-gray-400">
-                123, Main Road, New City, My Country 123456
-              </span>
-            </li>
-          </ul>
-          <div className="flex space-x-6 mt-6">
-            {/* Social Media Icons */}
+  {/* Email */}
+  <li className="flex items-center">
+    <a 
+      href="mailto:admin@carebridgerehab.com" 
+      className="flex items-center text-gray-400 hover:text-[#0087be] transition cursor-pointer"
+    >
+      <FaEnvelope className="mr-3 text-3xl" />
+      <span className="text-md">admin@carebridgerehab.com</span>
+    </a>
+  </li>
+
+  {/* Phone */}
+  <li className="flex items-center">
+    <a 
+      href="tel:+1 (708) 6789145" 
+      className="flex items-center text-gray-400 hover:text-[#0087be] transition cursor-pointer"
+    >
+      <FaMobileAlt className="mr-3 text-4xl" />
+      <span className="text-md">+1 (708) 6789145</span>
+    </a>
+  </li>
+</ul>
+
+          {/* <div className="flex space-x-6 mt-6">
             {[FaFacebookF, FaGoogle, FaVk, FaLinkedinIn, FaYoutube].map(
               (Icon, index) => (
                 <a
@@ -68,40 +76,44 @@ const Footer: React.FC = () => {
                 </a>
               )
             )}
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Quick Links */}
         <motion.div className="md:ml-10 sm:ml-0" variants={itemVariants}>
           <h3 className="text-2xl font-bold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-base">
-            {["About us", "Blog", "Contact us", "FAQ", "Insurance"].map(
-              (link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className="flex items-center text-gray-400 hover:text-[#0087be] transition"
-                  >
-                    <span
-                      className="mr-2"
-                      style={{
-                        color: "#0087be",
-                        fontSize: "12px",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      &#10148;
-                    </span>
-                    {link}
-                  </a>
-                </li>
-              )
-            )}
-          </ul>
+  {[
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Contact Us", path: "/contact" },
+    { name: "Privacy Policy", path: "/privacy" },
+  ].map((link) => (
+    <li key={link.name}>
+      <Link
+        to={link.path}
+        className="flex items-center text-gray-400 hover:text-[#0087be] transition"
+      >
+        <span
+          className="mr-2"
+          style={{
+            color: "#0087be",
+            fontSize: "12px",
+            fontWeight: "bold",
+          }}
+        >
+          &#10148;
+        </span>
+        {link.name}
+      </Link>
+    </li>
+  ))}
+</ul>
         </motion.div>
 
         {/* Our Services */}
-        <motion.div variants={itemVariants}>
+        {/* <motion.div variants={itemVariants}>
           <h3 className="text-2xl font-bold mb-4">Our Services</h3>
           <ul className="space-y-2 text-base">
             {[
@@ -132,7 +144,7 @@ const Footer: React.FC = () => {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </motion.div> */}
 
         {/* Enquiry Form */}
         <motion.div variants={itemVariants}>
@@ -145,7 +157,7 @@ const Footer: React.FC = () => {
             />
             <input
               type="text"
-              placeholder="Phone"
+              placeholder="Email"
               className="w-full bg-transparent border-b border-gray-600 py-1 focus:outline-none"
             />
             <textarea

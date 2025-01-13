@@ -9,6 +9,7 @@ import TeamSection from './Components/Pages/TeamSection';
 import OfferSection from './Components/Pages/OfferSection';
 import Footer from './Components/Header/Footer';
 import ScrollToTop from './Components/Pages/ScrollToTop';
+import Privacy from './Components/Pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -25,7 +26,9 @@ function App() {
               <About />
               <MyComponent />
               <TeamSection />
+              <Privacy/>
               <OfferSection />
+              
             </>
           }
         />
@@ -37,6 +40,7 @@ function App() {
           </>
         } />
         <Route path="/Services" element={<About></About> } />
+        <Route path="/privacy" element={<Privacy/> } />
         <Route path="/Contact" element={
           <>
           

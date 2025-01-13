@@ -39,7 +39,6 @@ const StatsSection: React.FC = () => {
   },
 };
 
-
   return (
     <motion.div
       className="bg-cover bg-center py-16 sm:py-20"
