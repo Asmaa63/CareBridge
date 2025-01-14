@@ -1,14 +1,13 @@
 import React from "react";
-import HomeImage from "../../assets/photo.webp";
+import HomeImage from "../../assets/Home.webp";
 
 const Home: React.FC = () => {
   return (
     <div className="h-screen w-screen flex justify-center items-center overflow-hidden relative">
-      {/* عكس جزء من الصورة حسب حجم الشاشة */}
       <img
         src={HomeImage}
         alt="Home"
-        className="h-full w-full object-cover" // عكس الجزء الأيسر فقط في الشاشات الصغيرة
+        className="h-full w-full object-cover" 
       />
       <div className="absolute text-black px-4 md:items-start md:left-20">
         <div className="text-center md:text-left max-w-2xl mx-auto md:mx-0">

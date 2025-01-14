@@ -26,9 +26,7 @@ function App() {
               <About />
               <MyComponent />
               <TeamSection />
-              <Privacy/>
               <OfferSection />
-              
             </>
           }
         />
