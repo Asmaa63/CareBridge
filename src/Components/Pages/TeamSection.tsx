@@ -81,13 +81,13 @@ Passionate about advancing the field of physical therapy and improving patient o
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <FaUserMd className="text-6xl" style={{ color: "#2c5899" }} />
+                <FaUserMd className="text-6xl" style={{ color: "#0087be" }} />
               )}
             </div>
             <h3 className="text-xl font-bold text-gray-800">{member.name}</h3>
             <p className="text-base text-gray-600">{member.role}</p>
             <button
-              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+              className="mt-2 px-6 py-2 bg-[#0087be] text-white text-sm font-bold rounded-full shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
               onClick={() => setSelectedMember(member.id)}
             >
               More Details
