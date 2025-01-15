@@ -1,31 +1,55 @@
-import React from 'react';
+import { useState } from 'react';
 import PrivacyPopup from './PrivacyPopup';
 import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
 
-type ContactUsProps = {};
+const ContactUs = () => {
+  const [popupVisible, setPopupVisible] = useState(false);
 
-const ContactUs: React.FC<ContactUsProps> = () => {
+  const sendEmail = (e:any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_2oifuq6', // Service ID
+        'template_upfx0u1', // Template ID
+        e.target, // Form data
+        'p9VNekC4yk0f7N7fV' // Public Key
+      )
+      .then(
+        (result:any) => {
+          console.log(result.text);
+          setPopupVisible(true); // Show success popup
+          setTimeout(() => setPopupVisible(false), 2000); // Hide popup after 2 seconds
+        },
+        (error:any) => {
+          console.error(error.text);
+        }
+      );
+
+    e.target.reset(); // Reset the form fields
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }} // تبدأ مخفية مع تحريك لأسفل
-      whileInView={{ opacity: 1, y: 0 }} // تظهر عند التمرير
-      viewport={{ once: true }} // يتم تطبيق الأنيميشن مرة واحدة فقط
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="bg-animated min-h-screen flex items-center justify-center px-4"
     >
-      <div className="max-w-5xl w-full rounded-lg  overflow-hidden">
+      <div className="max-w-5xl w-full rounded-lg overflow-hidden">
         {/* Header Section */}
-        <div className=" text-center text-white m-6">
-          <h1 className="text-4xl font-bold ">Contact Us</h1>
-          <p className="mt-2 text-lg ">
-            Serving patients across the United States.
+        <div className="text-center text-white m-6">
+          <h1 className="text-4xl font-bold">Contact Us</h1>
+          <p className="mt-2 text-lg">
+            Serving home health agencies across the greater Chicago area.
           </p>
         </div>
 
         {/* Form Section */}
         <div className="p-8 bg-white shadow-lg m-6">
-          <h2 className="text-2xl font-bold text-center mb-6">SMS-Compliant Opt-in Form</h2>
-          <form className="space-y-6">
+          <form onSubmit={sendEmail} className="space-y-6">
             {/* First Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -37,6 +61,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                 </label>
                 <input
                   type="text"
+                  name="firstName"
                   id="firstName"
                   required
                   className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
@@ -52,6 +77,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                 </label>
                 <input
                   type="text"
+                  name="lastName"
                   id="lastName"
                   required
                   className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
@@ -71,6 +97,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                 </label>
                 <input
                   type="text"
+                  name="companyName"
                   id="companyName"
                   required
                   className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
@@ -86,6 +113,7 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                 </label>
                 <input
                   type="email"
+                  name="workEmail"
                   id="workEmail"
                   required
                   className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
@@ -105,10 +133,11 @@ const ContactUs: React.FC<ContactUsProps> = () => {
                 </label>
                 <input
                   type="tel"
+                  name="mobileNumber"
                   id="mobileNumber"
                   required
                   className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
-                  placeholder="(123) 456-7890"
+                  placeholder="+1 (234) 567891"
                 />
               </div>
             </div>
@@ -119,13 +148,20 @@ const ContactUs: React.FC<ContactUsProps> = () => {
             </div>
             <button
               type="submit"
-              className=" px-6 py-2 bg-[#0087be] text-white font-bold rounded-md hover:bg-blue-800 transition"
+              className="px-6 py-2 bg-[#0087be] text-white font-bold rounded-md hover:bg-blue-800 transition"
             >
               Send Message
             </button>
           </form>
         </div>
       </div>
+
+      {/* Success Popup */}
+      {popupVisible && (
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50">
+          Message sent successfully!
+        </div>
+      )}
     </motion.div>
   );
 };

@@ -43,6 +43,7 @@ function App() {
         <Route path="/Services" element={<About></About> } />
         <Route path="/privacy" element={<Privacy/> } />
         <Route path="/privacyPopup" element={<PrivacyPopup/> } />
+        <Route path="/homepage" element={<Home/> } />
         <Route path="/Contact" element={
           <>
           <ContactUs />

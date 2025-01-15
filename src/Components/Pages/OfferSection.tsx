@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 const OfferSection: React.FC = () => {
   const containerVariants = {
@@ -26,21 +27,21 @@ const OfferSection: React.FC = () => {
       variants={containerVariants}
     >
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center text-center md:text-left px-4 space-y-4 md:space-y-0 md:space-x-8">
-        {/* النص */}
         <motion.p
           className="text-gray-800 font-bold text-lg"
           variants={itemVariants}
         >
-          New Patient Special Offer Complimentary Consultation
+         Enter your ZIP code or city to instantly check availability in your area.
         </motion.p>
 
-        {/* الزر */}
-        <motion.button
-          className="bg-[#0087be] text-white text-sm font-bold px-6 py-2 rounded-full shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          variants={itemVariants}
-        >
-          READ MORE
-        </motion.button>
+        <motion.div
+  className="bg-[#0087be] text-white text-sm font-bold px-6 py-2 rounded-full shadow hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
+  variants={itemVariants}
+>
+  <Link to="/homepage">
+    Check Now
+  </Link>
+</motion.div>
       </div>
     </motion.div>
   );

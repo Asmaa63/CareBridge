@@ -14,24 +14,24 @@ const TeamSection: React.FC = () => {
       details: `Dr. Amir Beltagi is a highly accomplished physical therapist with a diverse background in academia and clinical practice. Holding a Doctor of Philosophy in Biomechanics from Cairo University and the University of Illinois at Chicago (2022), as well as a Master of Science in Physical Therapy from Cairo University (2009), Dr. Beltagi brings a wealth of knowledge and expertise to CareBridge Rehab.Dr. Beltagi is a licensed physical therapist in New York, Illinois, and Egypt, with specialized experience in orthopedics, sports medicine, pediatrics, geriatrics, and neuromuscular rehabilitation. He is also certified in manual therapy, kinesio-taping, and pelvic floor management, allowing him to provide comprehensive and individualized care to patients of all ages and backgrounds.
 Passionate about advancing the field of physical therapy and improving patient outcomes, Dr. Beltagi remains dedicated to staying current with the latest advancements in research and evidence-based practices. Whether you’re recovering from an injury, managing a chronic condition, or looking to improve your overall physical function, Dr. Beltagi is dedicated to supporting your journey towards optimal health and wellness. His commitment to excellence and compassionate approach to care make him a valued member of the CareBridge Rehab team.`,
     },
-    {
-      id: 2,
-      name: "Dr Ricky Doe",
-      role: "Assistant Surgeon",
-      details: "Dr. Ricky Doe specializes in surgical assistance and patient care, ensuring excellent preoperative and postoperative support.",
-    },
-    {
-      id: 3,
-      name: "Dr Ricky Doe",
-      role: "Assistant Surgeon",
-      details: "Dr. Ricky Doe is dedicated to improving surgical outcomes through precision and teamwork.",
-    },
-    {
-      id: 4,
-      name: "Dr Ricky Doe",
-      role: "Assistant Surgeon",
-      details: "Dr. Ricky Doe is passionate about delivering high-quality surgical assistance to patients.",
-    },
+    // {
+    //   id: 2,
+    //   name: "Dr Ricky Doe",
+    //   role: "Assistant Surgeon",
+    //   details: "Dr. Ricky Doe specializes in surgical assistance and patient care, ensuring excellent preoperative and postoperative support.",
+    // },
+    // {
+    //   id: 3,
+    //   name: "Dr Ricky Doe",
+    //   role: "Assistant Surgeon",
+    //   details: "Dr. Ricky Doe is dedicated to improving surgical outcomes through precision and teamwork.",
+    // },
+    // {
+    //   id: 4,
+    //   name: "Dr Ricky Doe",
+    //   role: "Assistant Surgeon",
+    //   details: "Dr. Ricky Doe is passionate about delivering high-quality surgical assistance to patients.",
+    // },
   ];
 
   const containerVariants = {
@@ -57,14 +57,14 @@ Passionate about advancing the field of physical therapy and improving patient o
     >
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">Our Team</h2>
-        <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+        {/* <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium.
-        </p>
+        </p> */}
       </div>
 
       <motion.div
-        className="max-w-5xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center"
+        className="max-w-5xl mx-auto px-8  text-center justify-center items-center"
         variants={containerVariants}
       >
         {teamMembers.map((member) => (

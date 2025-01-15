@@ -9,6 +9,8 @@
     "noImplicitAny": true,
     "moduleResolution": "node",
     "jsx": "react-jsx",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "types": ["emailjs-com"]
   }
 }
