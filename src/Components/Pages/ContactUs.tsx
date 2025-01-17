@@ -137,7 +137,7 @@ const ContactUs = () => {
                   id="mobileNumber"
                   required
                   className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
-                  placeholder="+1 (234) 567891"
+                  placeholder="+1 (234) 567890"
                 />
               </div>
             </div>

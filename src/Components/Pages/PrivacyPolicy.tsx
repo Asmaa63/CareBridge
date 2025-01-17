@@ -114,7 +114,7 @@ const Privacy: React.FC = () => {
           <p className="flex items-center text-sm sm:text-base">
             <FaPhoneAlt className="mr-2 text-blue-500 text-lg sm:text-xl" />
             <a href="tel:+17086789145" className="text-blue-600 hover:underline">
-              +1 (708) 6789145
+              +1 (708) 678-9145
             </a>
           </p>
           <p className="flex items-center text-sm sm:text-base">

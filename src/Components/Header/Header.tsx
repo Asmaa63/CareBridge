@@ -63,7 +63,7 @@ const Header = () => {
                   rel="noopener noreferrer"
                   className="text-base text-[#2c5899] font-bold"
                 >
-                  +1 (708) 6789145
+                  +1 (708) 678-9145
                 </a>
               </div>
             </div>
@@ -160,7 +160,7 @@ const Header = () => {
                     rel="noopener noreferrer"
                     className="text-sm text-[#2c5899] font-bold"
                   >
-                    +1 (708) 6789145
+                    +1 (708) 678-9145
                   </a>
                 </div>
               </div>

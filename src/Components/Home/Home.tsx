@@ -54,7 +54,7 @@ const handleCheckAvailability = () => {
             Rehab Services, <br /> delivered to you
           </h1>
           <p className="text-lg md:text-xl mb-6 text-center py-2 font-bold">
-            Call (708) 678–9145
+            Call +1 (708) 678-9145
           </p>
           <div className="flex flex-col sm:flex-row w-full max-w-lg font-bold bg-transparent sm:bg-white rounded-full gap-2 sm:gap-0 justify-center items-center">
             <input
@@ -96,8 +96,21 @@ const handleCheckAvailability = () => {
               <div>
                 <h2 className="text-xl font-bold mb-2">Sorry</h2>
                 <p className="mb-2">Contact the office for the availability</p>
-                <p className="text-blue-700 text-xl font-bold">+1 (708) 6789145</p>
-                <p className="text-blue-700 text-xl font-bold">admin@carebridgerehab.com</p>
+                <div className="mt-4 space-y-2">
+          <p className="flex items-center text-sm sm:text-base">
+            <a href="tel:+17086789145" className="text-blue-600 font-bold hover:underline">
+              +1 (708) 678-9145
+            </a>
+          </p>
+          <p className="flex items-center text-sm sm:text-base">
+            <a
+              href="mailto:admin@carebridgerehab.com"
+              className="text-blue-600 font-bold hover:underline"
+            >
+              admin@carebridgerehab.com
+            </a>
+          </p>
+        </div>
                 <p className="mt-2 text-gray-700 text-sm">
                   Please make sure you have entered the correct zip code or
                   verified the spelling for accuracy.

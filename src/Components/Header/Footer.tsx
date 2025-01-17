@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
       className="flex items-center text-gray-400 hover:text-[#0087be] transition cursor-pointer"
     >
       <FaMobileAlt className="mr-3 text-4xl" />
-      <span className="text-md">+1 (708) 6789145</span>
+      <span className="text-md">+1 (708) 678-9145</span>
     </a>
   </li>
 </ul>
