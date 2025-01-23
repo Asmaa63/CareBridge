@@ -25,16 +25,18 @@ const PrivacyPopup: React.FC = () => {
           className="h-4 w-4 text-blue-900 focus:ring-blue-900 border-gray-300 rounded"
         />
         <label htmlFor="terms" className="ml-2 text-sm text-gray-600">
-          By providing your phone number above, and pressing the “Send Message” button below, you
-          agree to receive automated text messages from Textline, Inc. and also agree to our
+          By providing your phone number and clicking “Send Message,” 
+          you agree to receive automated text messages from CareBridge Rehab.
+          Message frequency varies.
+          Message and data rates may apply.
+          Text HELP for support or STOP to opt out. Review our
           <button
             onClick={handleOpen}
             className="text-blue-900 underline ml-1 focus:outline-none"
           >
             Privacy Policy
           </button>
-          . Consent is not a condition of purchase. Message frequency will vary. Message and data
-          rates may apply. Reply HELP for help or STOP to cancel.
+          . 
         </label>
       </div>
 

@@ -8,10 +8,17 @@ import {
   FaEnvelope,
   FaPhoneAlt,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Privacy: React.FC = () => {
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gray-100"
+    >
       <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-lg p-8">
         <h1 className="text-4xl font-extrabold text-center text-blue-600 mb-10">
           Privacy Policy
@@ -130,7 +137,7 @@ const Privacy: React.FC = () => {
         </div>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

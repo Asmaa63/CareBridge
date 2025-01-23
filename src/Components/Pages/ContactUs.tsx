@@ -20,7 +20,7 @@ const ContactUs = () => {
         (result:any) => {
           console.log(result.text);
           setPopupVisible(true); // Show success popup
-          setTimeout(() => setPopupVisible(false), 2000); // Hide popup after 2 seconds
+          setTimeout(() => setPopupVisible(false), 8000); // Hide popup after 2 seconds
         },
         (error:any) => {
           console.error(error.text);
@@ -137,7 +137,7 @@ const ContactUs = () => {
                   id="mobileNumber"
                   required
                   className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
-                  placeholder="+1 (234) 567890"
+                  placeholder="+1 (234) 567-8910"
                 />
               </div>
             </div>
@@ -158,8 +158,11 @@ const ContactUs = () => {
 
       {/* Success Popup */}
       {popupVisible && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50">
-          Message sent successfully!
+        <div className="fixed text-center top-1/4 left-1/2 transform -translate-x-1/2 bg-white text-[#0087be] px-6 py-4 rounded shadow-2xl border border-[#0087be] z-50">
+          Thank you for signing up with CareBridge Rehab!
+           You’ll receive up to 5 messages per week.
+           Message and data rates may apply.
+           Text HELP for support or STOP to unsubscribe.
         </div>
       )}
     </motion.div>
