@@ -1,34 +1,9 @@
 import { useState } from 'react';
 import { motion } from "framer-motion";
-import emailjs from '@emailjs/browser';
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const ContactUs = () => {
-  const [popupVisible, setPopupVisible] = useState(false);
-
-  const sendEmail = (e:any) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        'service_2oifuq6', // Service ID
-        'template_upfx0u1', // Template ID
-        e.target, // Form data
-        'p9VNekC4yk0f7N7fV' // Public Key
-      )
-      .then(
-        (result:any) => {
-          console.log(result.text);
-          setPopupVisible(true); // Show success popup
-          setTimeout(() => setPopupVisible(false), 8000); // Hide popup after 2 seconds
-        },
-        (error:any) => {
-          console.error(error.text);
-        }
-      );
-
-    e.target.reset(); // Reset the form fields
-  };
+  const [popupVisible] = useState(false);
 
   return (
     <motion.div
@@ -52,7 +27,6 @@ const ContactUs = () => {
       {/* <h1 className="text-5xl md:text-[50px] font-bold mb-6 leading-tight drop-shadow-[0_0_10px_white]">
         Rehab Services, <br /> delivered to you
       </h1> */}
-
       <div className="p-6 bg-white m-6 rounded-lg text-center">
       <div className="flex flex-col items-center gap-6 text-lg md:text-xl font-semibold">
         {/* Phone Section */}
