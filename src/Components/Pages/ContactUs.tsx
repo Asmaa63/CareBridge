@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import PrivacyPopup from './PrivacyPopup';
 import { motion } from "framer-motion";
 import emailjs from '@emailjs/browser';
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const ContactUs = () => {
   const [popupVisible, setPopupVisible] = useState(false);
@@ -48,112 +48,43 @@ const ContactUs = () => {
         </div>
 
         {/* Form Section */}
-        <div className="p-8 bg-white shadow-lg m-6">
-          <form onSubmit={sendEmail} className="space-y-6">
-            {/* First Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="firstName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  First Name*
-                </label>
-                <input
-                  type="text"
-                  name="firstName"
-                  id="firstName"
-                  required
-                  className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
-                  placeholder="Jane"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="lastName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Last Name*
-                </label>
-                <input
-                  type="text"
-                  name="lastName"
-                  id="lastName"
-                  required
-                  className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
-                  placeholder="McNeil"
-                />
-              </div>
-            </div>
+        <div className="p-8 bg-white shadow-lg m-6 rounded-lg text-center">
+      {/* <h1 className="text-5xl md:text-[50px] font-bold mb-6 leading-tight drop-shadow-[0_0_10px_white]">
+        Rehab Services, <br /> delivered to you
+      </h1> */}
 
-            {/* Second Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="companyName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Company Name*
-                </label>
-                <input
-                  type="text"
-                  name="companyName"
-                  id="companyName"
-                  required
-                  className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
-                  placeholder="Acme Co."
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="workEmail"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Work Email*
-                </label>
-                <input
-                  type="email"
-                  name="workEmail"
-                  id="workEmail"
-                  required
-                  className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
-                  placeholder="jane@acme.co"
-                />
-              </div>
-            </div>
-
-            {/* Third Row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="mobileNumber"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Mobile Number*
-                </label>
-                <input
-                  type="tel"
-                  name="mobileNumber"
-                  id="mobileNumber"
-                  required
-                  className="bg-gray-100 mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-900 focus:ring-opacity-50"
-                  placeholder="+1 (234) 567-8910"
-                />
-              </div>
-            </div>
-
-            {/* Privacy and Submit */}
-            <div className="flex items-start space-x-4">
-              <PrivacyPopup />
-            </div>
-            <button
-              type="submit"
-              className="px-6 py-2 bg-[#0087be] text-white font-bold rounded-md hover:bg-blue-800 transition"
-            >
-              Send Message
-            </button>
-          </form>
+      <div className="p-6 bg-white m-6 rounded-lg text-center">
+      <div className="flex flex-col items-center gap-6 text-lg md:text-xl font-semibold">
+        {/* Phone Section */}
+        <div className="flex flex-col items-center text-gray-700 text-center">
+          <FaPhoneAlt className="text-blue-500 text-3xl mb-1" />
+          <span className="text-sm md:text-lg font-medium">Call</span>
+          <a
+            href="https://wa.me/17086789145"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg md:text-xl text-nowrap text-[#2c5899] font-bold hover:underline"
+          >
+            +1 (708) 678-9145
+          </a>
         </div>
+
+        {/* Email Section */}
+        <div className="flex flex-col items-center text-gray-700 text-center">
+          <FaEnvelope className="text-blue-500 text-3xl mb-1" />
+          <span className="text-sm md:text-lg font-medium">Email</span>
+          <a
+  href="mailto:admin@carebridgerehab.com"
+  className="text-md md:text-xl text-[#2c5899] font-bold hover:underline break-all text-wrap text-center max-w-full"
+>
+  admin@carebridgerehab.com
+</a>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
       </div>
 
       {/* Success Popup */}

@@ -50,9 +50,9 @@ const handleCheckAvailability = () => {
       />
       <div className="absolute text-black px-4 md:items-start md:left-20">
         <div className="text-center md:text-left max-w-2xl mx-auto md:mx-0">
-          <h1 className="text-5xl md:text-[50px] font-bold mb-4 leading-tight text-center">
-            Rehab Services, <br /> delivered to you
-          </h1>
+          <h1 className="text-5xl md:text-[50px] font-bold mb-4 leading-tight text-center drop-shadow-[0_0_10px_white]">
+  Rehab Services, <br /> delivered to you
+</h1>
           <p className="text-lg md:text-xl mb-6 text-center py-2 font-bold">
             Call +1 (708) 678-9145
           </p>
