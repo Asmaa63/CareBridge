@@ -2,58 +2,60 @@ import { useState } from "react";
 import PrivacyPopup from "./PrivacyPopup";
 import { motion } from "framer-motion";
 
-interface ContactData {
-  first_name: string;
-  last_name: string;
-  company_email: string;
-  work_email: string;
-  phone: string;
-  is_contact: number;
-}
+// interface ContactData {
+//   first_name: string;
+//   last_name: string;
+//   company_email: string;
+//   work_email: string;
+//   phone: string;
+//   is_contact: number;
+// }
 
 const ContactUs = () => {
   const [popupVisible, setPopupVisible] = useState(false);
-  const [popupData, setPopupData] = useState<ContactData | null>(null);
+  const [popupData, setPopupData] = useState<any | null>(null);
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  const form = e.currentTarget;
-  const formData = new FormData(form);
-  const data = {
-    first_name: formData.get("firstName") as string || "",
-    last_name: formData.get("lastName") as string || "",
-    company_email: formData.get("companyEmail") as string || "",
-    work_email: formData.get("workEmail") as string || "",
-    phone: formData.get("mobileNumber") as string || "",
-    message: "contact email", // تعيين قيمة افتراضية
-    subject: "General Inquiry",
-    is_contact: 1,
-  };
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = {
+      first_name: formData.get("firstName") as string || "",
+      last_name: formData.get("lastName") as string || "",
+      company_email: formData.get("companyEmail") as string || "",
+      work_email: formData.get("workEmail") as string || "",
+      phone: formData.get("mobileNumber") as string || "",
+      message: "contact email",
+      subject: "General Inquiry",
+      is_contact: 1,
+    };
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    if (response.ok) {
-      console.log("Response Data:", data);
-      setPopupData(data);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      console.log("Response Data:", responseData);
+      setPopupData(responseData);
       setPopupVisible(true);
       setTimeout(() => setPopupVisible(false), 5000);
 
       if (form) {
         form.reset();
       }
-    } else {
-      console.error("Failed to send data:", await response.text());
+    } catch (error) {
+      console.error("Error sending data:", error);
     }
-  } catch (error) {
-    console.error("Error sending data:", error);
-  }
-};
+  };
+
 
   return (
     <motion.div
