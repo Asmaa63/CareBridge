@@ -15,7 +15,7 @@ const ContactUs = () => {
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupData, setPopupData] = useState<ContactData | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   const form = e.currentTarget;
@@ -26,7 +26,7 @@ const ContactUs = () => {
     company_email: formData.get("companyEmail") as string || "",
     work_email: formData.get("workEmail") as string || "",
     phone: formData.get("mobileNumber") as string || "",
-    message: formData.get("message") as string || "Default inquiry message",
+    message: "contact email", // تعيين قيمة افتراضية
     subject: "General Inquiry",
     is_contact: 1,
   };
@@ -44,7 +44,6 @@ const ContactUs = () => {
       setPopupVisible(true);
       setTimeout(() => setPopupVisible(false), 5000);
 
-      // التأكد من أن الفورم موجود قبل استدعاء reset()
       if (form) {
         form.reset();
       }
@@ -55,7 +54,6 @@ const ContactUs = () => {
     console.error("Error sending data:", error);
   }
 };
-
 
   return (
     <motion.div
@@ -98,11 +96,6 @@ const ContactUs = () => {
               <label className="block text-sm font-medium text-gray-700">Mobile Number*</label>
               <input type="tel" name="mobileNumber" placeholder="+1 (234) 567-8910" required className="bg-gray-100 w-full px-3 py-2 border rounded-md" />
             </div>
-            <div>
-  <label className="block text-sm font-medium text-gray-700">Message*</label>
-  <textarea name="message" placeholder="Write your inquiry here..." required className="bg-gray-100 w-full px-3 py-2 border rounded-md"></textarea>
-</div>
-
             <div className="flex items-start space-x-4">
               <PrivacyPopup />
             </div>
