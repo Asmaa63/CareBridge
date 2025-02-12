@@ -1,9 +1,61 @@
-import { useState } from 'react';
+import { useState } from "react";
+import PrivacyPopup from "./PrivacyPopup";
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+
+interface ContactData {
+  first_name: string;
+  last_name: string;
+  company_email: string;
+  work_email: string;
+  phone: string;
+  is_contact: number;
+}
 
 const ContactUs = () => {
-  const [popupVisible] = useState(false);
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [popupData, setPopupData] = useState<ContactData | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+  const data = {
+    first_name: formData.get("firstName") as string || "",
+    last_name: formData.get("lastName") as string || "",
+    company_email: formData.get("companyEmail") as string || "",
+    work_email: formData.get("workEmail") as string || "",
+    phone: formData.get("mobileNumber") as string || "",
+    message: formData.get("message") as string || "Default inquiry message",
+    subject: "General Inquiry",
+    is_contact: 1,
+  };
+
+  try {
+    const response = await fetch("http://carebridger.runasp.net/Contact/submitcontact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      console.log("Response Data:", data);
+      setPopupData(data);
+      setPopupVisible(true);
+      setTimeout(() => setPopupVisible(false), 5000);
+
+      // التأكد من أن الفورم موجود قبل استدعاء reset()
+      if (form) {
+        form.reset();
+      }
+    } else {
+      console.error("Failed to send data:", await response.text());
+    }
+  } catch (error) {
+    console.error("Error sending data:", error);
+  }
+};
+
 
   return (
     <motion.div
@@ -14,60 +66,59 @@ const ContactUs = () => {
       className="bg-animated min-h-screen flex items-center justify-center px-4"
     >
       <div className="max-w-5xl w-full rounded-lg overflow-hidden">
-        {/* Header Section */}
         <div className="text-center text-white m-6">
           <h1 className="text-4xl font-bold">Contact Us</h1>
           <p className="mt-2 text-lg">
             Serving home health agencies across the greater Chicago area.
           </p>
         </div>
+        <div className="p-8 bg-white shadow-lg m-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">First Name*</label>
+                <input type="text" name="firstName" placeholder="Jone" required className="bg-gray-100 w-full px-3 py-2 border rounded-md" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Last Name*</label>
+                <input type="text" name="lastName" placeholder="Doe" required className="bg-gray-100 w-full px-3 py-2 border rounded-md" />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Company Email*</label>
+                <input type="email" name="companyEmail" placeholder="company@example.com" required className="bg-gray-100 w-full px-3 py-2 border rounded-md" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Work Email*</label>
+                <input type="email" name="workEmail" placeholder="work@example.com" required className="bg-gray-100 w-full px-3 py-2 border rounded-md" />
+              </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Mobile Number*</label>
+              <input type="tel" name="mobileNumber" placeholder="+1 (234) 567-8910" required className="bg-gray-100 w-full px-3 py-2 border rounded-md" />
+            </div>
+            <div>
+  <label className="block text-sm font-medium text-gray-700">Message*</label>
+  <textarea name="message" placeholder="Write your inquiry here..." required className="bg-gray-100 w-full px-3 py-2 border rounded-md"></textarea>
+</div>
 
-        {/* Form Section */}
-        <div className="p-8 bg-white shadow-lg m-6 rounded-lg text-center">
-      {/* <h1 className="text-5xl md:text-[50px] font-bold mb-6 leading-tight drop-shadow-[0_0_10px_white]">
-        Rehab Services, <br /> delivered to you
-      </h1> */}
-      <div className="p-6 bg-white m-6 rounded-lg text-center">
-      <div className="flex flex-col items-center gap-6 text-lg md:text-xl font-semibold">
-        {/* Phone Section */}
-        <div className="flex flex-col items-center text-gray-700 text-center">
-          <FaPhoneAlt className="text-blue-500 text-3xl mb-1" />
-          <span className="text-sm md:text-lg font-medium">Call</span>
-          <a
-            href="https://wa.me/17086789145"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg md:text-xl text-nowrap text-[#2c5899] font-bold hover:underline"
-          >
-            +1 (708) 678-9145
-          </a>
-        </div>
-
-        {/* Email Section */}
-        <div className="flex flex-col items-center text-gray-700 text-center">
-          <FaEnvelope className="text-blue-500 text-3xl mb-1" />
-          <span className="text-sm md:text-lg font-medium">Email</span>
-          <a
-  href="mailto:admin@carebridgerehab.com"
-  className="text-md md:text-xl text-[#2c5899] font-bold hover:underline break-all text-wrap text-center max-w-full"
->
-  admin@carebridgerehab.com
-</a>
-
+            <div className="flex items-start space-x-4">
+              <PrivacyPopup />
+            </div>
+            <button type="submit" className="px-6 py-2 font-bold rounded-md transition bg-[#0087be] text-white hover:bg-blue-800">
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
-    </div>
-
-    </div>
-      </div>
-
-      {/* Success Popup */}
-      {popupVisible && (
+      {popupVisible && popupData && (
         <div className="fixed text-center top-1/4 left-1/2 transform -translate-x-1/2 bg-white text-[#0087be] px-6 py-4 rounded shadow-2xl border border-[#0087be] z-50">
-          Thank you for signing up with CareBridge Rehab!
-           You’ll receive up to 5 messages per week.
-           Message and data rates may apply.
-           Text HELP for support or STOP to unsubscribe.
+          <p>Thank you, {popupData.first_name} {popupData.last_name}!</p>
+          <p>Your message has been sent successfully.</p>
+          <p>Company Email: {popupData.company_email}</p>
+          <p>Work Email: {popupData.work_email}</p>
+          <p>Phone: {popupData.phone}</p>
         </div>
       )}
     </motion.div>
