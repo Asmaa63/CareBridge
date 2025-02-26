@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaEnvelope, FaPhone } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/CBR.webp";
+import Logo from "../../assets/cbt.webp";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
