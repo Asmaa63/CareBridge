@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
 
       {/* Copyright Section */}
       <div className="text-center text-sm text-gray-500 mt-6">
-        Copyright © 2025 CareBridge Rehab. All Rights Reserved
+        Copyright © 2025 CareBridge therapeutics. All Rights Reserved
       </div>
 
       {/* Success Popup */}
