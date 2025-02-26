@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HomeImage from "../../assets/Home.webp";
+import HomeImage from "../../assets/home.png";
 import availabilityImage from "../../assets/available.png";
 import mapImage from "../../assets/map.jpeg";
 import zipCodesData from "./zip_codes.json";
