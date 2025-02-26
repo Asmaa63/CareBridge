@@ -138,7 +138,7 @@ const handleCheckAvailability = () => {
             <img
               src={mapImage}
               alt="Map"
-              className="w-full h-auto rounded-lg max-h-[400px] "
+              className="w-full h-auto rounded-lg max-h-[470px] "
             />
           </div>
         </div>
