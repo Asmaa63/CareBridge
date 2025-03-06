@@ -12,11 +12,10 @@ interface FeatureProps {
 const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => {
   return (
     <div className=" flex flex-col items-center text-center rounded-lg bg-white min-h-[280px] w-full">
-      {/* الحاوية للدائرة المتحركة والأيقونة */}
       <div className="relative flex items-center justify-center mb-6 w-20 h-20">
-        {/* الدائرة المتحركة */}
+        
         <div className="absolute w-full h-full border-4 border-dashed border-blue-500 rounded-full animate-spin-slow"></div>
-        {/* الأيقونة */}
+        
         <div className="relative flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full">
           {icon}
         </div>
@@ -37,7 +36,7 @@ const About: React.FC = () => {
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <div className="container mx-auto px-4 ">
-        {/* عنوان القسم */}
+        
         <div className="text-center mb-10 ">
           <h2 className="text-3xl font-bold mb-4">Our Services</h2>
           <p className="text-gray-700 leading-relaxed">
@@ -45,7 +44,7 @@ const About: React.FC = () => {
           </p>
         </div>
 
-        {/* المحتوى الرئيسي */}
+        
         <div className=" flex flex-col md:flex-row md:items-stretch md:justify-between gap-2">
           <div className=" flex flex-col text-center w-full md:w-1/3 ">
             <Feature
@@ -60,7 +59,6 @@ const About: React.FC = () => {
             />
           </div>
 
-          {/* الصورة */}
           <div className="hidden md:flex md:block md:w-1/3 items-center justify-center w-full">
             <img
               src={aboutImage}
@@ -83,7 +81,6 @@ const About: React.FC = () => {
           </div>
         </div>
 
-        {/* الصورة عند تصغير الشاشة */}
         <div className="block md:hidden flex justify-center mt-6">
           <img
             src={aboutImage}

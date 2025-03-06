@@ -27,15 +27,14 @@ const Footer: React.FC = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
     
-    // تعديل البيانات المرسلة للـ API
   const data = {
   first_name: formData.get("name") as string || "No Name",
   phone: formData.get("phone") as string || "",
   message: formData.get("message") as string || "General Inquiry",
   subject: "Website Enquiry",
   last_name: "N/A",
-  work_email: "testuser@gmail.com", // استخدمي بريد إلكتروني حقيقي
-  company_email: "info@yourcompany.com" // جربي إيميل صالح
+  work_email: "testuser@gmail.com", 
+  company_email: "info@yourcompany.com" 
 };
 
     try {

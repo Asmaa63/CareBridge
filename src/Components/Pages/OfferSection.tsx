@@ -8,7 +8,7 @@ const OfferSection: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // تأخير ظهور العناصر
+        staggerChildren: 0.3, 
       },
     },
   };
@@ -23,7 +23,7 @@ const OfferSection: React.FC = () => {
       className="bg-gray-200 py-6"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }} // تظهر عند رؤية 30% من القسم
+      viewport={{ once: true, amount: 0.3 }} 
       variants={containerVariants}
     >
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center text-center md:text-left px-4 space-y-4 md:space-y-0 md:space-x-8">

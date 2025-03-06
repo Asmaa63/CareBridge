@@ -26,7 +26,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     company_email: formData.get("companyEmail") as string || "",
     work_email: formData.get("workEmail") as string || "",
     phone: formData.get("mobileNumber") as string || "",
-    message: "contact email", // تعيين قيمة افتراضية
+    message: "contact email", 
     subject: "General Inquiry",
     is_contact: 1,
   };
