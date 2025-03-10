@@ -72,9 +72,9 @@ const Footer: React.FC = () => {
           <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
           <ul className="space-y-4 text-base">
             <li className="flex justify-center md:justify-start items-center">
-              <a href="mailto:admin@carebridgerehab.com" className="flex items-center text-gray-400 hover:text-[#0087be] transition">
+              <a href="mailto:office@carebridgetherapeutics.com" className="flex items-center text-gray-400 hover:text-[#0087be] transition">
                 <FaEnvelope className="mr-3 text-3xl" />
-                <span className="text-md">admin@carebridgerehab.com</span>
+                <span className="text-md">office@carebridgetherapeutics.com</span>
               </a>
             </li>
             <li className="flex justify-center md:justify-start items-center">

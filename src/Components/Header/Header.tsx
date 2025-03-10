@@ -37,10 +37,10 @@ const Header = () => {
               <div className="leading-tight">
                 <p className="text-sm text-gray-500">MAIL US</p>
                 <a
-                  href="mailto:admin@carebridgerehab.com"
+                  href="mailto:office@carebridgetherapeutics.com"
                   className="text-base text-[#2c5899] font-bold"
                 >
-                  admin@carebridgerehab.com
+                  office@carebridgetherapeutics.com
                 </a>
               </div>
             </div>
@@ -134,10 +134,10 @@ const Header = () => {
                 <div>
                   <p className="text-sm text-gray-500">MAIL US</p>
                   <a
-                    href="mailto:admin@carebridgerehab.com"
+                    href="mailto:office@carebridgetherapeutics.com"
                     className="text-sm text-[#2c5899] font-bold"
                   >
-                    admin@carebridgerehab.com
+                    office@carebridgetherapeutics.com
                   </a>
                 </div>
               </div>
