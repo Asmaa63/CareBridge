@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const StatsSection: React.FC = () => {
   const stats = [
     { id: 1, value: "150+", label: "Satisfied Patients", icon: <FaUserCheck size={50} /> },
-    { id: 2, value: "15", label: "Partners", icon: <FaHandshake size={50} /> },
+    { id: 2, value: "15+", label: "Partners", icon: <FaHandshake size={50} /> },
     { id: 3, value: "750+", label: "Patient Visits", icon: <FaClinicMedical size={50} /> },
     { id: 4, value: "150+", label: "Customized Care Plans", icon: <FaClipboardList size={50} /> },
   ];
